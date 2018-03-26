@@ -1,0 +1,51 @@
+# /etc/gitlab/gitlab.rb
+# Check sample from https://gitlab.com/satorix/omniauth-oauth2-generic#gitlab-config-example
+
+gitlab_rails['omniauth_enabled'] = true
+gitlab_rails['omniauth_allow_single_sign_on'] = ['saml']
+gitlab_rails['omniauth_block_auto_created_users'] = false
+#gitlab_rails['omniauth_auto_sign_in_with_provider'] = ['saml']
+gitlab_rails['omniauth_auto_link_saml_user'] =  true
+gitlab_rails['omniauth_providers'] = [
+  {
+    'name' => 'saml',
+    'label' => 'RedHat SSO',
+
+    'groups_attribute' => 'Role',
+    'external_groups' => ['gitlab-ce:external'],
+
+    'args' => {
+      'assertion_consumer_service_url' => 'http://127.0.0.1:7080/users/auth/saml/callback',
+      'idp_cert_fingerprint' => '86:12:EE:7D:B0:0C:9E:A5:5C:AE:A9:30:32:18:85:44:A0:76:58:4C',
+      'idp_sso_target_url' => 'http://127.0.0.1:8080/auth/realms/master/protocol/saml/clients/gitlab-ce',
+      #'issuer' => 'http://127.0.0.1:7080',
+      'issuer' => 'gitlab-ce',
+      'name_identifier_format': 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
+   
+#     'client_options' => {
+#        'site' => 'http://127.0.0.1:8080', # including port if necessary
+#        'authorize_url' => '/auth/realms/master/protocol/saml/auth',
+#        'user_info_url' => '/auth/realms/master/protocol/saml/userinfo',
+#        'token_url' => '/auth/realms/master/protocol/saml/token'
+#      },
+
+        'attribute_statements': {
+         'nickname' => ['name'],
+         'username' => ['name'],
+         'first_name' => ['urn:oid:2.5.4.42'],
+         'last_name' => ['2.5.4.4'],
+         'email' => ['urn:oid:1.2.840.113549.1.9.1']
+
+
+#        'first_name' => ['first_name'], # including port if necessary
+#        'last_name' =>  ['last_name'],
+#        'name' =>  ['name'],
+#        'email' =>  ['email'],
+#        'username' => ['name']
+      }
+     # 'name' => 'RHSSO',
+      #'strategy_class' => "OmniAuth::Strategies::OAuth2Generic" # Devise-specific config option Gitlab uses to find renamed strategy
+   }
+  }
+]
+
