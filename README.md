@@ -18,9 +18,18 @@ $ docker run -d  -p 7080:80  gitlab/gitlab-ce
 
 ```
 This  command pull the image gitlab/gitlab-ce: latest from docker hub and start a new dockerized  gitlab instance.
+[Gitlab CE](https://github.com/nelvadas/gitlab-with-redhatsso-saml.git/blob/master/gitlabce01.png "Gitlab CE Installation")
+Fill the screen 
+Create a local admin acccount with the following credentials for example
+```
+New Password: P@ssw0rd
+confirm New  Password P@ssw0rd
+```
+login with root/P@ssw0rd
 
-
-[Gitlab CE](./blob/master/.png "Gitlab CE ")
+[Gitlab CE](https://github.com/nelvadas/gitlab-with-redhatsso-saml.git/blob/master/gitlabce02.png "Gitlab Admin view")
+you are now connected to the admin panel.
+here we used a local account to logon, in the follwing section we will see how to enable SAML authentification through RHSSO
 
 
 ## Installing Red Hat SSO
