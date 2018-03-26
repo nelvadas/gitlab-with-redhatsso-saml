@@ -3,12 +3,12 @@
  1. [Introduction](#introduction)
  2. [Gitlab CE Setup](#gitlabcesetup1)
  3. [RH SSO config](#rhsso)
-   1. [RHSSO Install](#rhssoinstall)
-   2. [SAML Configuration](#saml) 
-     1. [SAML Client](#samlclient)
-     2. [mapping](#mapping)
-     2. [Adding RHSSO as SAML Provider in Gitlab](#gitlabrb)
- 3. [GitlabCE SAML Authent](#testing)
+    1. [RHSSO Install](#rhssoinstall)
+    2. [SAML Configuration](#saml) 
+       1. [SAML Client](#samlclient)
+       2. [mapping](#mapping)
+       3. [Adding RHSSO as SAML Provider in Gitlab](#gitlabrb)
+ 4. [GitlabCE SAML Authent](#testing)
  5. [Next](#next)
 
 ## Introduction <a name="introduction"></a>
