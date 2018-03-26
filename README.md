@@ -27,7 +27,7 @@ confirm New  Password P@ssw0rd
 ```
 login with root/P@ssw0rd
 
-![Gitlab CE](https://github.com/nelvadas/gitlab-with-redhatsso-saml.git/blob/master/gitlabce02.png)
+![Gitlab CE](images/gitlabce-install02.png)
 you are now connected to the admin panel.
 here we used a local account to logon, in the follwing section we will see how to enable SAML authentification through RHSSO
 
