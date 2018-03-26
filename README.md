@@ -45,7 +45,7 @@ here we used a local account to logon, in the follwing section we will see how t
 
 ## Installing Red Hat SSO <a name="rhssoinstall"></a>
 <a href="https://access.redhat.com/products/red-hat-single-sign-on#getstarted">RHSSO</a> provides Web single sign-on and identity federation based on SAML 2.0, OpenID Connect and OAuth 2.0 specifications.
-RH SSO exists both in monolithic zip/tar or container images.
+RH SSO exists both in monolithic <a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=core.service.rhsso">zip/tar.gz</a>  or <a href="https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/redhat-sso-7/sso72-openshift">container images<a>.
 Install your prefer version and setup the basic admin account 
 
 ## SAML <a name="saml"></a>
